@@ -3,4 +3,6 @@
     <string name="welcome_text">Buy Fruits Easily With Us.</string>
     <string name="welcome_text_small">Welcome to the app be free to buy any fruit you are looking for</string>
     <string name="welcome_button">Get Started</string>
+    <string name="good_for_you">Good for you.</string>
+    <string name="great_for_life">Great for life.</string>
 </resources>

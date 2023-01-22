@@ -1,5 +1,6 @@
 package com.example.fruity
 
+import android.graphics.Paint.Align
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,8 +19,10 @@ import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.fruity.ui.theme.AppOrange
 import com.example.fruity.ui.theme.FruityTheme
 import com.example.fruity.ui.theme.openSans
@@ -41,15 +44,25 @@ fun WelcomeScreen(
         )
 
         Column(
-            modifier = modifier.fillMaxSize(),
+            modifier = modifier
+                .fillMaxSize()
+                .padding(horizontal = 30.dp, vertical = 15.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly,
-            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 stringResource(id = R.string.welcome_text),
+                fontWeight = FontWeight.Bold,
+                fontFamily = openSans,
+                fontSize = 40.sp,
+                textAlign = TextAlign.Center,
                 modifier = modifier
             )
-            Text(stringResource(id = R.string.welcome_text_small))
+            Text(
+                stringResource(id = R.string.welcome_text_small),
+                textAlign = TextAlign.Center,
+                fontSize = 20.sp
+            )
             Button(
                 onClick = { /*TODO*/ },
                 modifier = modifier
@@ -58,7 +71,10 @@ fun WelcomeScreen(
                 elevation = ButtonDefaults.elevation(0.dp,0.dp),
                 contentPadding = PaddingValues(horizontal = 30.dp, vertical = 20.dp)
             ) {
-                Text(stringResource(id = R.string.welcome_button))
+                Text(
+                    stringResource(id = R.string.welcome_button),
+                    fontSize = 20.sp
+                )
             }
         }
     }
