@@ -6,4 +6,9 @@
     <string name="good_for_you">Good for you.</string>
     <string name="great_for_life">Great for life.</string>
     <string name="search_text">What are you looking for?...</string>
+    <string name="cat_nuts">Nuts</string>
+    <string name="cat_vegetable">Vegetables</string>
+    <string name="cat_fruits">Fruits</string>
+    <string name="cat_gluten">Gluten Free</string>
+    <string name="cat_chilli">Chilli</string>
 </resources>
