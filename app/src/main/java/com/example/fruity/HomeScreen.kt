@@ -5,11 +5,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.IconButton
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
@@ -20,6 +20,8 @@ import androidx.compose.ui.text.style.TextOverflow.Companion.Clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.fruity.ui.theme.AppLightGrey
+import com.example.fruity.ui.theme.AppOrange
 import com.example.fruity.ui.theme.AppStrongGrey
 import com.example.fruity.ui.theme.FruityTheme
 
@@ -71,7 +73,43 @@ fun TopBarPreview(){
 
 @Composable
 fun SearchBar(modifier: Modifier = Modifier){
-
+    TextField(
+        value = "",
+        onValueChange = {},
+        maxLines = 1,
+        placeholder = {
+            Text(stringResource(id = R.string.search_text))
+        },
+        leadingIcon = {
+            Icon(
+                modifier = modifier
+                    .padding(horizontal = 10.dp)
+                    .width(25.dp),
+                painter = painterResource(id = R.drawable.search),
+                contentDescription = null
+            )
+        },
+        trailingIcon = {
+            Icon(
+                modifier = modifier
+                    .padding(horizontal = 10.dp)
+                    .width(25.dp),
+                painter = painterResource(id = R.drawable.filter),
+                contentDescription = null
+            )
+        },
+        colors = TextFieldDefaults.textFieldColors(
+            focusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent
+        )
+        ,
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(70.dp)
+            .padding(15.dp)
+            .clip(shape = RoundedCornerShape(23.dp))
+            .background(AppLightGrey)
+    )
 }
 
 @Preview (showBackground = true)
